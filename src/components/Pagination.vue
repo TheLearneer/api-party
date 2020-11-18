@@ -132,6 +132,8 @@ export default {
   },
   methods: {
     updateActivePage(count) {
+      // eslint-disable-next-line vue/no-mutating-props
+      this.active = count;
       this.$emit("change", this.active);
     },
   },

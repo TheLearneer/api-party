@@ -5,6 +5,9 @@
 		<div class="ribbon" v-if="details.https">
 			<span class="uppercase">https</span>
 		</div>
+		<div class="absolute right-0 top-0 bg-red-400 shadow-md px-2 rounded-tr-md rounded-bl-md text-sm" v-if="deprecated">
+			<span class="uppercase font-semibold">deprecated</span>
+		</div>
 		<div align="center">
 			<img
 				:src="getImage()"
@@ -83,6 +86,9 @@
 					default:
 						return "None";
 				}
+			},
+			deprecated() {
+				return this.details.hasOwnProperty('deprecated');
 			}
 		},
 		methods: {

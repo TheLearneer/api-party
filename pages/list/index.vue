@@ -94,6 +94,10 @@
 						else return false;
 					})
 					.filter((api) => {
+						if (api.hasOwnProperty('deprecated') && api.deprecated) return false;
+						else return true;
+					})
+					.filter((api) => {
 						const query = this.filters.search.toLowerCase();
 						return (
 							api.name

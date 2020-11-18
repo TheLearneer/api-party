@@ -7,13 +7,17 @@
 		"dev": "nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
-		"generate": "nuxt generate"
+		"generate": "nuxt generate",
+		"lint": "eslint --ext .js,.vue ./",
+		"lint:fix": "eslint --fix --ext .js,.vue ./"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
 		"nuxt": "^2.14.6"
 	},
 	"devDependencies": {
-		"@nuxtjs/tailwindcss": "^3.2.0"
+		"@nuxtjs/tailwindcss": "^3.2.0",
+		"eslint": "^7.13.0",
+		"eslint-plugin-vue": "^7.1.0"
 	}
 }

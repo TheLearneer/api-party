@@ -1,17 +1,21 @@
 <template>
-	<span
-		class="inline-block rounded-full font-semibold select-none px-2 py-1"
-		:class="[
-			uppercase ? 'uppercase' : 'capitalize',
-			category.toLowerCase(),
-			active ? 'border-gray-800 border-2 shadow-lg' : 'shadow'
-		]"
-	>
-		<slot>
-			<span class="mdi mr-1" :class="iconKey" v-if="icon && iconKey" />
-			<span>{{ category }}</span>
-		</slot>
-	</span>
+  <span
+    class="inline-block rounded-full font-semibold select-none px-2 py-1"
+    :class="[
+      uppercase ? 'uppercase' : 'capitalize',
+      category.toLowerCase(),
+      active ? 'border-gray-800 border-2 shadow-lg' : 'shadow'
+    ]"
+  >
+    <slot>
+      <span
+        v-if="icon && iconKey"
+        class="mdi mr-1"
+        :class="iconKey"
+      />
+      <span>{{ category }}</span>
+    </slot>
+  </span>
 </template>
 
 <script>
@@ -21,7 +25,12 @@
 				type: Boolean,
 				default: false
 			},
-			category: String,
+			category: {
+				type: String,
+				default: () => {
+					return 'Uncategorized'
+				}
+			},
 			icon: {
 				type: Boolean,
 				default: false

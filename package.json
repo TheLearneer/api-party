@@ -8,8 +8,8 @@
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"generate": "nuxt generate",
-		"lint": "eslint --ext .js,.vue ./",
-		"lint:fix": "eslint --fix --ext .js,.vue ./"
+		"lint": "eslint --ext .js,.vue src",
+		"lint:fix": "eslint --fix --ext .js,.vue src"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",

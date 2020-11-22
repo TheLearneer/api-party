@@ -6,7 +6,7 @@
           src="@/assets/images/logo.png"
           alt="API party logo"
         >
-        <span class="text-gray-600">The awesome API collection!</span>
+        <span class="text-gray-700">The awesome API collection!</span>
       </div>
     </div>
     <div class="bg-gray-200 my-8">

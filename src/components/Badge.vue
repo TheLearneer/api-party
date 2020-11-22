@@ -1,6 +1,6 @@
 <template>
   <span
-    class="inline-block rounded-full font-semibold select-none px-2 py-1"
+    class="w-auto inline-block rounded-full font-semibold select-none px-2 py-1"
     :class="[
       uppercase ? 'uppercase' : 'capitalize',
       category.toLowerCase(),
@@ -8,17 +8,23 @@
     ]"
   >
     <slot>
-      <span
-        v-if="icon && iconKey"
-        class="mdi mr-1"
-        :class="iconKey"
-      />
-      <span>{{ category }}</span>
+      <span class="flex">
+        <Icon
+          v-if="icon && iconKey"
+          :path="iconKey"
+          :size="18"
+        />
+        <span class="ml-1">
+          {{ category }}
+        </span>
+      </span>
     </slot>
   </span>
 </template>
 
 <script>
+	import { mdiControllerClassic, mdiAccountGroup, mdiSparkles, mdiPaw, mdiMovieOpen, mdiTelevisionPlay, mdiEmoticonLol, mdiWeatherCloudy } from '@mdi/js';
+
 	export default {
 		props: {
 			uppercase: {
@@ -44,21 +50,21 @@
 			iconKey() {
 				switch (this.category) {
 					case "games":
-						return "mdi-controller-classic";
+						return mdiControllerClassic;
 					case "social":
-						return "mdi-account-group";
+						return mdiAccountGroup;
 					case "entertainment":
-						return "mdi-sparkles";
+						return mdiSparkles;
 					case "animals":
-						return "mdi-paw";
+						return mdiPaw;
 					case "movies":
-						return "mdi-movie-open";
+						return mdiMovieOpen;
 					case "shows":
-						return "mdi-television-play";
+						return mdiTelevisionPlay;
 					case "comics":
-						return "mdi-emoticon-lol";
+						return mdiEmoticonLol;
 					case "weather":
-						return "mdi-weather-cloudy";
+						return mdiWeatherCloudy;
 					default:
 						return false;
 				}

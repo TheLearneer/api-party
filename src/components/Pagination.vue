@@ -17,12 +17,13 @@
         <button
           class="border w-10 h-10 rounded-lg focus:outline-none focus:shadow-md"
           :class="active === 1 ? 'bg-gray-300 cursor-not-allowed' : ''"
-          :disabled="active === 1"
+          :disabled="activalign-middle === 1"
           aria-label="Previous page"
           @click="updateActivePage(active - 1)"
         >
-          <span
-            class="mdi mdi-chevron-left mdi-18px"
+          <Icon
+            :path="leftIcon"
+            size="32"
             :class="active === 1 ? 'text-gray-600' : ''"
           />
         </button>
@@ -69,8 +70,9 @@
           aria-label="Next page"
           @click="updateActivePage(active + 1)"
         >
-          <span
-            class="mdi mdi-chevron-right mdi-18px"
+          <Icon
+            :path="rightIcon"
+            size="32"
             :class="active === pageCount ? 'text-gray-600' : ''"
           />
         </button>
@@ -80,6 +82,8 @@
 </template>
 
 <script>
+import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
+
 export default {
   props: {
     items: {
@@ -129,6 +133,12 @@ export default {
     hasLastEllipsis() {
       return this.active < this.pageCount - (2 + this.activeRange);
     },
+    leftIcon() {
+      return mdiChevronLeft;
+    },
+    rightIcon() {
+      return mdiChevronRight;
+    }
   },
   methods: {
     updateActivePage(count) {

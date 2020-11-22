@@ -21,19 +21,21 @@
         :title="`${details.name} logo`"
         class="object-scale-down w-24 h-24 rounded-lg mb-2"
       >
-      <span class="text-xl font-semibold mx-auto my-auto">
-        {{ details.name }}
+      <span class="flex justify-center">
+        <span class="text-xl font-semibold my-auto">
+          {{ details.name }}
+        </span>
+        <Icon
+          v-if="details.official"
+          :path="officialIcon"
+          class="text-blue-400 ml-1 mt-1"
+        />
+        <Icon
+          v-if="details.hasPaidPlan"
+          :path="paidPlanIcon"
+          class="text-orange-400 ml-1 mt-1"
+        />
       </span>
-      <span
-        v-if="details.official"
-        class="mdi mdi-check-decagram mdi-24px text-blue-400"
-        title="Official API"
-      />
-      <span
-        v-if="details.hasPaidPlan"
-        class="mdi mdi-currency-usd-circle mdi-24px text-orange-400"
-        title="Includes Paid Plans"
-      />
     </div>
     <div class="text-center mt-3">
       <Badge
@@ -49,9 +51,13 @@
     </div>
     <div
       v-if="details.apiUrl && !details.auth"
-      class="my-1"
+      class="my-1 flex"
     >
-      <span class="mdi mdi-link-variant mdi-18px mr-1" />
+      <Icon
+        :path="linkIcon"
+        size="18"
+        class="mr-1 mt-1"
+      />
       <a
         :href="details.apiUrl"
         rel="noopener"
@@ -63,9 +69,13 @@
     </div>
     <div
       v-if="details.docs"
-      class="my-1"
+      class="my-1 flex"
     >
-      <span class="mdi mdi-book-open-variant mdi-18px mr-1" />
+      <Icon
+        :path="documentationIcon"
+        size="18"
+        class="mr-1 mt-1"
+      />
       <a
         :href="details.docs"
         rel="noopener"
@@ -77,9 +87,13 @@
     </div>
     <div
       v-if="details.auth"
-      class="my-1"
+      class="my-1 flex"
     >
-      <span class="mdi mdi-key mdi-18px mr-1" />
+      <Icon
+        :path="authenticationIcon" 
+        size="18"
+        class="mr-1 mt-1"
+      />
       <span>Authentication: </span>
       <span class="font-semibold">{{ apiAuth }}</span>
     </div>
@@ -87,6 +101,7 @@
 </template>
 
 <script>
+import {mdiBookOpenVariant, mdiCheckDecagram, mdiCurrencyUsdCircle, mdiKey, mdiLinkVariant} from '@mdi/js';
 export default {
   props: {
     details: {
@@ -110,6 +125,21 @@ export default {
     deprecated() {
       return this.details.hasOwnProperty("deprecated");
     },
+    officialIcon() {
+return mdiCheckDecagram;
+    },
+    paidPlanIcon() {
+return mdiCurrencyUsdCircle;
+    },
+    linkIcon() {
+      return mdiLinkVariant;
+    },
+    documentationIcon() {
+      return mdiBookOpenVariant
+    },
+    authenticationIcon() {
+      return mdiKey;
+    }
   },
   methods: {
     getImage() {

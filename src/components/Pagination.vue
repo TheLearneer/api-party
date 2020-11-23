@@ -17,7 +17,7 @@
         <button
           class="border w-10 h-10 rounded-lg focus:outline-none focus:shadow-md"
           :class="active === 1 ? 'bg-gray-300 cursor-not-allowed' : ''"
-          :disabled="activalign-middle === 1"
+          :disabled="active === 1"
           aria-label="Previous page"
           @click="updateActivePage(active - 1)"
         >

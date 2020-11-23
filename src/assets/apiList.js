@@ -1,3 +1,8 @@
+const auth = {
+	API_KEY: 1,
+	OAUTH: 2
+}
+
 export const apiList = [
 	{
 		id: "coc.supercell",
@@ -9,7 +14,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["games"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "cr.supercell",
@@ -21,7 +26,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["games"],
-		auth: 1
+		auth: auth.API_KEY,
 	},
 	{
 		id: "bs.supercell",
@@ -33,7 +38,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["games"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "starlist",
@@ -45,7 +50,7 @@ export const apiList = [
 		docs: "https://www.starlist.pro/dashboard/",
 		https: true,
 		categories: ["games"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "pokemon",
@@ -77,7 +82,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["social"],
-		auth: 2
+		auth: auth.OAUTH
 	},
 	{
 		id: "opentdb",
@@ -98,7 +103,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["games"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "riot.games",
@@ -109,7 +114,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["games"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "catfact.ninja",
@@ -214,7 +219,7 @@ export const apiList = [
 		docs: "https://funtranslations.com/api/",
 		https: true,
 		categories: ["entertainment"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -226,7 +231,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["social"],
-		auth: 2,
+		auth: auth.OAUTH,
 		hasPaidPlan: true
 	},
 	{
@@ -238,7 +243,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["social"],
-		auth: 2
+		auth: auth.OAUTH
 	},
 	{
 		id: "instagram",
@@ -249,7 +254,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["social"],
-		auth: 2
+		auth: auth.OAUTH
 	},
 	{
 		id: "facebook",
@@ -260,7 +265,7 @@ export const apiList = [
 		official: true,
 		https: true,
 		categories: ["social"],
-		auth: 2
+		auth: auth.OAUTH
 	},
 	{
 		id: "themoviedb",
@@ -270,7 +275,7 @@ export const apiList = [
 		docs: "https://developers.themoviedb.org/3/getting-started",
 		https: true,
 		categories: ["entertainment", "movies", "shows"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "omdb",
@@ -279,7 +284,7 @@ export const apiList = [
 		docs: "https://www.omdbapi.com/",
 		https: true,
 		categories: ["entertainment", "movies"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "tvbd",
@@ -289,7 +294,7 @@ export const apiList = [
 		docs: "https://api.thetvdb.com/swagger",
 		https: true,
 		categories: ["entertainment", "movies", "shows"],
-		auth: 1
+		auth: auth.API_KEY
 	},
 	{
 		id: "tvmaze",
@@ -358,7 +363,7 @@ export const apiList = [
 		docs: "https://openweathermap.org/api",
 		https: true,
 		categories: ["weather"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -369,7 +374,7 @@ export const apiList = [
 		docs: "https://weatherstack.com/documentation",
 		https: true,
 		categories: ["weather"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -379,7 +384,7 @@ export const apiList = [
 		docs: "https://www.weatherbit.io/api",
 		https: true,
 		categories: ["weather"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -390,7 +395,7 @@ export const apiList = [
 		docs: "https://developer.accuweather.com/apis",
 		https: true,
 		categories: ["weather"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -401,7 +406,7 @@ export const apiList = [
 		docs: "https://www.aerisweather.com/support/docs/api/",
 		https: true,
 		categories: ["weather"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -412,7 +417,7 @@ export const apiList = [
 		docs: "https://www.troposphere.io/developer",
 		https: true,
 		categories: ["weather"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{
@@ -467,7 +472,7 @@ export const apiList = [
 		docs: "https://ipstack.com/documentation",
 		https: true,
 		categories: ["geocoding"],
-		auth: 1,
+		auth: auth.API_KEY,
 		hasPaidPlan: true
 	},
 	{

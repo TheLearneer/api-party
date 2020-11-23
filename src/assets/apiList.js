@@ -459,5 +459,25 @@ export const apiList = [
 		apiUrl: "https://randomfox.ca/floof/",
 		https: true,
 		categories: ["animals"]
+	},
+	{
+		id: "ipstack",
+		name: "ipstack API",
+		description: "Powerful, real-time IP to geolocation API.",
+		docs: "https://ipstack.com/documentation",
+		https: true,
+		categories: ["geocoding"],
+		auth: 1,
+		hasPaidPlan: true
+	},
+	{
+		id: "ip-api",
+		name: "ip-api",
+		description: "Geolocation information for the IP.",
+		apiUrl: "http://ip-api.com/json/",
+		docs: "https://ip-api.com/docs",
+		https: false,
+		categories: ["geocoding"],
+		hasPaidPlan: true
 	}
 ];

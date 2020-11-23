@@ -23,7 +23,7 @@
 </template>
 
 <script>
-	import { mdiControllerClassic, mdiAccountGroup, mdiSparkles, mdiPaw, mdiMovieOpen, mdiTelevisionPlay, mdiEmoticonLol, mdiWeatherCloudy } from '@mdi/js';
+	import { mdiControllerClassic, mdiAccountGroup, mdiSparkles, mdiPaw, mdiMovieOpen, mdiTelevisionPlay, mdiEmoticonLol, mdiWeatherCloudy, mdiMapMarker } from '@mdi/js';
 
 	export default {
 		props: {
@@ -65,6 +65,8 @@
 						return mdiEmoticonLol;
 					case "weather":
 						return mdiWeatherCloudy;
+					case "geocoding":
+						return mdiMapMarker;
 					default:
 						return false;
 				}
@@ -97,5 +99,8 @@
 	}
 	.weather {
 		@apply bg-gradient-to-b from-gray-500 to-gray-100;
+	}
+	.geocoding {
+		@apply bg-gradient-to-tr from-teal-400 via-blue-300 to-green-400
 	}
 </style>

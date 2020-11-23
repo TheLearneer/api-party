@@ -15,7 +15,7 @@
     <div class="flex flex-wrap justify-between mt-3 mx-2">
       <div>
         <button
-          class="border w-10 h-10 rounded-lg focus:outline-none focus:shadow-md"
+          class="border rounded-lg focus:outline-none focus:shadow-md"
           :class="active === 1 ? 'bg-gray-300 cursor-not-allowed' : ''"
           :disabled="active === 1"
           aria-label="Previous page"
@@ -64,7 +64,7 @@
       </div>
       <div>
         <button
-          class="border w-10 h-10 rounded-lg focus:outline-none focus:shadow-md"
+          class="border rounded-lg focus:outline-none focus:shadow-md"
           :class="active === pageCount ? 'bg-gray-300 cursor-not-allowed' : ''"
           :disabled="active === pageCount"
           aria-label="Next page"
